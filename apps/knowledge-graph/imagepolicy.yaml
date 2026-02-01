@@ -8,7 +8,8 @@ spec:
     name: knowledge-graph
   policy:
     semver:
-      range: '>=0.1.0'
+      range: '>=0.1.0-alpha'
   filterTags:
-    pattern: '^(?P<version>\d+\.\d+\.\d+(-[a-zA-Z]+\.\d+)?)-(?P<sha>[a-f0-9]+)$'
+    pattern: '^(?P<version>.*)-(?P<sha>[a-f0-9]+)$'
     extract: '$version'
+
