@@ -15,4 +15,4 @@ spec:
       interval: 1m
   values:
     image:
-      tag: 0.1.1-alpha.11-66141c0 # {"$imagepolicy": "flux-system:knowledge-graph:tag"}
+      tag: 0.1.1-alpha.12-521b4b1 # {"$imagepolicy": "flux-system:knowledge-graph:tag"}
