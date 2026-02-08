@@ -3,10 +3,10 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - gitrepository-dev.yaml
-  - gitrepository-prod.yaml
+  - gitrepository-stg.yaml
   - imagerepository.yaml
   - imagepolicy-dev.yaml
-  - imagepolicy-prod.yaml
+  - imagepolicy-stg.yaml
   - helmrelease-dev.yaml
-  - helmrelease-prod.yaml
+  - helmrelease-stg.yaml
   - imageupdateautomation.yaml
