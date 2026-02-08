@@ -18,10 +18,6 @@ spec:
     environment: dev
     image:
       tag: latest # {"$imagepolicy": "flux-system:auth-dev:tag"}
-    serviceAccount:
-      create: true
-    autoscaling:
-      enabled: false
     ingress:
       useSubpath: true
 ---
@@ -46,9 +42,5 @@ spec:
     environment: stg
     image:
       tag: latest # {"$imagepolicy": "flux-system:auth-stg:tag"}
-    serviceAccount:
-      create: true
-    autoscaling:
-      enabled: false
     ingress:
       useSubpath: true
