@@ -1,7 +1,7 @@
-apiVersion: image.toolkit.fluxcd.io/v1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
 metadata:
-  name: knowledge-graph
+  name: flux-system
   namespace: flux-system
 spec:
   interval: 1m
@@ -16,9 +16,9 @@ spec:
       author:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
-      messageTemplate: "Automated image update"
+      messageTemplate: 'chore: self-automated image update'
     push:
       branch: main
   update:
-    path: ./apps/knowledge-graph
+    path: ./apps
     strategy: Setters
