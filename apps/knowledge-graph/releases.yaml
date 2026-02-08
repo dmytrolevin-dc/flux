@@ -18,8 +18,15 @@ spec:
         - helm/knowledge-graph/values.yaml
         - helm/knowledge-graph/values-dev.yaml
   values:
+    environment: dev
     image:
       tag: 0.1.1-alpha.13-b0fb66e # {"$imagepolicy": "flux-system:knowledge-graph-dev:tag"}
+    ingress:
+      hosts:
+        - host: "verus-dev.districtcyber.io"
+          paths:
+            - path: /knowledge-graph
+              pathType: Prefix
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
@@ -27,6 +34,7 @@ metadata:
   name: knowledge-graph-stg
   namespace: flux-system
 spec:
+  suspend: true # ЗАКРЫТО ДО ПОЯВЛЕНИЯ БАЗ ДАННЫХ
   targetNamespace: verus-stg
   interval: 5m
   chart:
@@ -41,5 +49,12 @@ spec:
         - helm/knowledge-graph/values.yaml
         - helm/knowledge-graph/values-stg.yaml
   values:
+    environment: stg
     image:
       tag: 1.0.0-b0fb66e # {"$imagepolicy": "flux-system:knowledge-graph-stg:tag"}
+    ingress:
+      hosts:
+        - host: "verus-stg.districtcyber.io"
+          paths:
+            - path: /knowledge-graph
+              pathType: Prefix
