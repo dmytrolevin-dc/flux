@@ -36,9 +36,9 @@ spec:
         alb.ingress.kubernetes.io/healthcheck-path: /health/live
         alb.ingress.kubernetes.io/backend-protocol-version: GRPC
       hosts:
-        - host: ""
+        - host: verus-dev.districtcyber.io
           paths:
-            - path: /
+            - path: /auth
               pathType: Prefix
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
