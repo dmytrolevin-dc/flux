@@ -9,7 +9,7 @@ spec:
   ref:
     branch: dev
   secretRef:
-    name: flux-system
+    name: verus-elixir-auth
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
@@ -22,4 +22,4 @@ spec:
   ref:
     branch: main
   secretRef:
-    name: flux-system
+    name: verus-elixir-auth
