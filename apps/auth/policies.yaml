@@ -6,6 +6,7 @@ metadata:
 spec:
   image: 010438496771.dkr.ecr.us-east-2.amazonaws.com/verus-auth-svc
   interval: 5m
+  provider: aws
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
@@ -16,10 +17,11 @@ spec:
   imageRepositoryRef:
     name: auth
   policy:
-    filterBy:
-      re: '^.*-alpha\..*$'
-    alphabetical:
-      order: asc
+    semver:
+      range: '>=0.1.0-alpha'
+  filterTags:
+    pattern: '^(?P<version>.*-alpha\..*)$'
+    extract: '$version'
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
@@ -31,4 +33,4 @@ spec:
     name: auth
   policy:
     semver:
-      range: '>=1.0.0-0'
+      range: '>=1.0.0'
