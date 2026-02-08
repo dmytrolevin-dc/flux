@@ -23,7 +23,23 @@ spec:
     image:
       tag: 0.1.0-alpha.123 # {"$imagepolicy": "flux-system:auth-dev:tag"}
     ingress:
+      enabled: true
+      className: "alb"
       useSubpath: true
+      annotations:
+        kubernetes.io/ingress.class: alb
+        alb.ingress.kubernetes.io/scheme: internet-facing
+        alb.ingress.kubernetes.io/target-type: ip
+        alb.ingress.kubernetes.io/group.name: verus-group
+        alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+        alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:010438496771:certificate/006be357-3a85-4593-b2a8-d75e65a81922
+        alb.ingress.kubernetes.io/healthcheck-path: /health/live
+        alb.ingress.kubernetes.io/backend-protocol-version: GRPC
+      hosts:
+        - host: ""
+          paths:
+            - path: /
+              pathType: Prefix
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
