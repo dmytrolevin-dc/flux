@@ -1,8 +1,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: knowledge-graph
-  namespace: default
+  name: knowledge-graph-prod
+  namespace: verus-prod
 spec:
   interval: 5m
   chart:
@@ -10,9 +10,12 @@ spec:
       chart: ./helm/knowledge-graph
       sourceRef:
         kind: GitRepository
-        name: verus-elixir
+        name: verus-elixir-prod
         namespace: flux-system
       interval: 1m
+      valuesFiles:
+        - values.yaml
+        - values-prod.yaml
   values:
     image:
-      tag: 0.1.1-alpha.12-521b4b1 # {"$imagepolicy": "flux-system:knowledge-graph:tag"}
+      tag: 1.0.0-xxxxxx # {"$imagepolicy": "flux-system:knowledge-graph-prod:tag"}

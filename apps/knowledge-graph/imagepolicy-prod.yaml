@@ -1,15 +1,14 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
-  name: knowledge-graph
+  name: knowledge-graph-prod
   namespace: flux-system
 spec:
   imageRepositoryRef:
     name: knowledge-graph
   policy:
     semver:
-      range: '>=0.1.0-alpha'
+      range: '>=1.0.0'
   filterTags:
-    pattern: '^(?P<version>.*)-(?P<sha>[a-f0-9]+)$'
+    pattern: '^(?P<version>[0-9]+\.[0-9]+\.[0-9]+)-(?P<sha>[a-f0-9]+)$'
     extract: '$version'
-
