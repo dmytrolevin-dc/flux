@@ -19,4 +19,4 @@ spec:
         - helm/knowledge-graph/values-prod.yaml
   values:
     image:
-      tag: 1.0.0-xxxxxx # {"$imagepolicy": "flux-system:knowledge-graph-prod:tag"}
+      tag: 1.0.0-b0fb66e # {"$imagepolicy": "flux-system:knowledge-graph-prod:tag"}
