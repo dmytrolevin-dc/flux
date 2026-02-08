@@ -21,7 +21,7 @@ spec:
   values:
     environment: dev
     image:
-      tag: latest # {"$imagepolicy": "flux-system:auth-dev:tag"}
+      tag: 0.1.0-alpha.122 # {"$imagepolicy": "flux-system:auth-dev:tag"}
     ingress:
       useSubpath: true
 ---
