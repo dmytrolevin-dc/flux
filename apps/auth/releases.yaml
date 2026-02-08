@@ -14,12 +14,14 @@ spec:
         name: verus-go-dev
         namespace: flux-system
       interval: 1m
-      valuesFiles:
-        - services/auth/helm/auth/values.yaml
   values:
     environment: dev
     image:
       tag: latest # {"$imagepolicy": "flux-system:auth-dev:tag"}
+    serviceAccount:
+      create: true
+    autoscaling:
+      enabled: false
     ingress:
       useSubpath: true
 ---
@@ -40,11 +42,13 @@ spec:
         name: verus-go-stg
         namespace: flux-system
       interval: 1m
-      valuesFiles:
-        - services/auth/helm/auth/values.yaml
   values:
     environment: stg
     image:
       tag: latest # {"$imagepolicy": "flux-system:auth-stg:tag"}
+    serviceAccount:
+      create: true
+    autoscaling:
+      enabled: false
     ingress:
       useSubpath: true
