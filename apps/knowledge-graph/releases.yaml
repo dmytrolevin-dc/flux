@@ -34,7 +34,7 @@ metadata:
   name: knowledge-graph-stg
   namespace: flux-system
 spec:
-  suspend: false # ВРЕМЕННО ВКЛЮЧАЕМ ДЛЯ ОБНОВЛЕНИЯ ИНГРЕССА
+  suspend: true # ЗАКРЫТО ДО ПОЯВЛЕНИЯ БАЗ ДАННЫХ
   targetNamespace: verus-stg
   interval: 5m
   chart:
