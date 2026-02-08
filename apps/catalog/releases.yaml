@@ -21,7 +21,7 @@ spec:
   values:
     environment: dev
     image:
-      tag: latest # {"$imagepolicy": "flux-system:catalog-dev:tag"}
+      tag: 0.1.0-alpha.124 # {"$imagepolicy": "flux-system:catalog-dev:tag"}
     ingress:
       enabled: true
       className: "alb"
