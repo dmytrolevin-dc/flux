@@ -6,6 +6,10 @@ metadata:
 spec:
   targetNamespace: verus-dev
   interval: 5m
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true
   chart:
     spec:
       chart: ./services/auth/helm/auth
