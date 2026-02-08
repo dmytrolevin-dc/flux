@@ -22,7 +22,17 @@ spec:
     image:
       tag: 0.1.1-alpha.13-b0fb66e # {"$imagepolicy": "flux-system:knowledge-graph-dev:tag"}
     ingress:
+      enabled: true
+      className: "alb"
       useSubpath: false
+      annotations:
+        kubernetes.io/ingress.class: alb
+        alb.ingress.kubernetes.io/scheme: internet-facing
+        alb.ingress.kubernetes.io/target-type: ip
+        alb.ingress.kubernetes.io/group.name: verus-group
+        alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+        alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:010438496771:certificate/006be357-3a85-4593-b2a8-d75e65a81922
+        alb.ingress.kubernetes.io/healthcheck-path: /health/live
       hosts:
         - host: "knowledge-graph-dev.districtcyber.io"
           paths:
@@ -54,7 +64,17 @@ spec:
     image:
       tag: 1.0.0-b0fb66e # {"$imagepolicy": "flux-system:knowledge-graph-stg:tag"}
     ingress:
+      enabled: true
+      className: "alb"
       useSubpath: false
+      annotations:
+        kubernetes.io/ingress.class: alb
+        alb.ingress.kubernetes.io/scheme: internet-facing
+        alb.ingress.kubernetes.io/target-type: ip
+        alb.ingress.kubernetes.io/group.name: verus-group
+        alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+        alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:010438496771:certificate/006be357-3a85-4593-b2a8-d75e65a81922
+        alb.ingress.kubernetes.io/healthcheck-path: /health/live
       hosts:
         - host: "knowledge-graph-stg.districtcyber.io"
           paths:
