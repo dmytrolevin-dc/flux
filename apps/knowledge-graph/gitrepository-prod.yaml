@@ -1,0 +1,17 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: verus-elixir-prod
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: https://github.com/DistrictCyber02/Verus-elixir
+  ref:
+    branch: main
+  secretRef:
+    name: verus-elixir-auth
+  ignore: |
+    # exclude all
+    /*
+    # include helm charts
+    !/helm/
