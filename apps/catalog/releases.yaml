@@ -15,7 +15,7 @@ spec:
       chart: ./services/catalog-svc/helm/catalog
       sourceRef:
         kind: GitRepository
-        name: verus-go-catalog-dev
+        name: verus-go-dev
         namespace: flux-system
       interval: 1m
   values:
