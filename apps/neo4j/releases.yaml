@@ -1,0 +1,56 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: neo4j-dev
+  namespace: flux-system
+spec:
+  targetNamespace: verus-dev
+  interval: 5m
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true
+  chart:
+    spec:
+      chart: ./helm/neo4j
+      sourceRef:
+        kind: GitRepository
+        name: verus-neo4j-dev
+        namespace: flux-system
+      interval: 1m
+  values:
+    environment: dev
+    app:
+      image:
+        tag: latest # {"$imagepolicy": "flux-system:neo4j-dev:tag"}
+      ingress:
+        enabled: true
+        host: verus-dev.districtcyber.io
+        path: /neo4j
+    db:
+      auth:
+        password: "password"
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: neo4j-stg
+  namespace: flux-system
+spec:
+  suspend: true
+  targetNamespace: verus-stg
+  interval: 5m
+  chart:
+    spec:
+      chart: ./helm/neo4j
+      sourceRef:
+        kind: GitRepository
+        name: verus-neo4j-stg
+        namespace: flux-system
+      interval: 1m
+  values:
+    environment: stg
+    app:
+      ingress:
+        host: neo4j-stg.districtcyber.io
+        path: /
