@@ -6,3 +6,4 @@ resources:
   - ./catalog
   - ./neo4j
   - ./web-gateway
+  - ./frontend
