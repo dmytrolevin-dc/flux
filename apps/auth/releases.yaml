@@ -38,7 +38,7 @@ spec:
       hosts:
         - host: verus-dev.districtcyber.io
           paths:
-            - path: /auth
+            - path: /auth.AuthService
               pathType: Prefix
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2

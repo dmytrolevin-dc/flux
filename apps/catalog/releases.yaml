@@ -38,5 +38,5 @@ spec:
       hosts:
         - host: verus-dev.districtcyber.io
           paths:
-            - path: /catalog
+            - path: /catalog.CatalogService
               pathType: Prefix
