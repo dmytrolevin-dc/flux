@@ -20,6 +20,8 @@ spec:
       interval: 1m
   values:
     environment: dev
+    service:
+      targetPort: 9090
     image:
       tag: 0.1.0-alpha.126 # {"$imagepolicy": "flux-system:catalog-dev:tag"}
     ingress:
@@ -33,8 +35,10 @@ spec:
         alb.ingress.kubernetes.io/group.name: verus-group
         alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
         alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:010438496771:certificate/006be357-3a85-4593-b2a8-d75e65a81922
-        alb.ingress.kubernetes.io/healthcheck-path: /health/live
+        alb.ingress.kubernetes.io/healthcheck-path: /
+        alb.ingress.kubernetes.io/healthcheck-protocol: GRPC
         alb.ingress.kubernetes.io/backend-protocol-version: GRPC
+        alb.ingress.kubernetes.io/success-codes: "12"
       hosts:
         - host: verus-dev.districtcyber.io
           paths:
