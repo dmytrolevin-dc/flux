@@ -5,3 +5,4 @@ resources:
   - ./auth
   - ./catalog
   - ./neo4j
+  - ./web-gateway

@@ -1,0 +1,31 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: web-gateway-dev
+  namespace: flux-system
+spec:
+  targetNamespace: verus-dev
+  interval: 5m
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true
+  chart:
+    spec:
+      chart: ./services/web-gateway/helm/web-gateway
+      sourceRef:
+        kind: GitRepository
+        name: verus-go-dev
+        namespace: flux-system
+      interval: 1m
+  values:
+    environment: dev
+    image:
+      tag: latest
+    ingress:
+      enabled: true
+      hosts:
+        - host: verus-dev.districtcyber.io
+          paths:
+            - path: /api
+              pathType: Prefix
