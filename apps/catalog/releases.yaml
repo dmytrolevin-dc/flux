@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: catalog-dev
+  name: catalog-svc
   namespace: flux-system
 spec:
   targetNamespace: verus-dev

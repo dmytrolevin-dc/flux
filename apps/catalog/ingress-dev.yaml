@@ -22,6 +22,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: verus-dev-catalog-dev
+                name: verus-dev-catalog-svc
                 port:
                   number: 80
