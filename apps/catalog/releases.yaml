@@ -23,7 +23,7 @@ spec:
     service:
       targetPort: 9090
     image:
-      tag: 0.1.0-alpha.126 # {"$imagepolicy": "flux-system:catalog-dev:tag"}
+      tag: 0.2.0-alpha.11 # {"$imagepolicy": "flux-system:catalog-dev:tag"}
     ingress:
       enabled: true
       className: "alb"
