@@ -21,7 +21,7 @@ spec:
   values:
     environment: dev
     image:
-      tag: 0.2.0-alpha.30 # {"$imagepolicy": "flux-system:auth-dev:tag"}
+      tag: 0.2.0-alpha.31 # {"$imagepolicy": "flux-system:auth-dev:tag"}
     ingress:
       enabled: true
       className: "alb"
