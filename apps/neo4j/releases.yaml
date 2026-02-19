@@ -28,6 +28,9 @@ spec:
         host: verus-dev.districtcyber.io
         path: /com.verus.neo4j.grpc.Neo4jService
     db:
+      persistence:
+        enabled: true
+        size: 10Gi
       auth:
         password: "password"
 ---
