@@ -21,7 +21,7 @@ spec:
   values:
     environment: dev
     image:
-      tag: 0.1.0-alpha.127 # {"$imagepolicy": "flux-system:verus-frontend-dev:tag"}
+      tag: 0.1.0-alpha.129 # {"$imagepolicy": "flux-system:verus-frontend-dev:tag"}
     config:
       viteBackendUrl: "https://verus-dev.districtcyber.io"
       viteEnv: "development"
