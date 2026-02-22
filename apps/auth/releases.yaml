@@ -4,6 +4,7 @@ metadata:
   name: auth-dev
   namespace: flux-system
 spec:
+  suspend: true
   targetNamespace: verus-dev
   interval: 5m
   install:
