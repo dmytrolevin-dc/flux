@@ -1,0 +1,14 @@
+pod/temporal-server-5b6d5575f5-x9jrq
+pod/temporal-ui-8f9bd7768-r2xzt
+pod/verus-dev-auth-dev-7bd8695757-dflsg
+pod/verus-dev-auth-dev-84cbb7cbf7-4vkjg
+pod/verus-dev-catalog-svc-5776b775b5-g82pt
+pod/verus-dev-catalog-svc-64f6dd6c5c-ffsdr
+pod/verus-dev-neo4j-dev-app-54b94fd89b-mt9j5
+pod/verus-dev-neo4j-dev-app-69b899b98c-pkvvk
+pod/verus-dev-neo4j-dev-db-74d459c45d-cnttq
+pod/verus-dev-verus-frontend-dev-5795d68d77-2m6r7
+pod/verus-dev-web-gateway-dev-54c6b7f99d-z6qtk
+pod/verus-knowledge-graph-5455c5d99b-n228f
+pod/verus-knowledge-graph-57d75c56fd-slg5d
+pod/worker-svc-645d4bb7bd-vxf5x

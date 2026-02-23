@@ -1,0 +1,10 @@
+deployment.apps/temporal-server
+deployment.apps/temporal-ui
+deployment.apps/verus-dev-auth-dev
+deployment.apps/verus-dev-catalog-svc
+deployment.apps/verus-dev-neo4j-dev-app
+deployment.apps/verus-dev-neo4j-dev-db
+deployment.apps/verus-dev-verus-frontend-dev
+deployment.apps/verus-dev-web-gateway-dev
+deployment.apps/verus-knowledge-graph
+deployment.apps/worker-svc

@@ -1,0 +1,15 @@
+temporal-server-5b6d5575f5-x9jrq Running 
+temporal-ui-8f9bd7768-r2xzt Running 
+verus-dev-auth-dev-59c4655dd-w87bd Pending CreateContainerConfigError
+verus-dev-auth-dev-84cbb7cbf7-4vkjg Running 
+verus-dev-catalog-svc-599977cf6d-45857 Pending CreateContainerConfigError
+verus-dev-catalog-svc-64f6dd6c5c-ffsdr Running 
+verus-dev-neo4j-dev-app-54b94fd89b-mt9j5 Running 
+verus-dev-neo4j-dev-db-74d459c45d-cnttq Running 
+verus-dev-neo4j-dev-db-8696f6dd85-pswjr Pending 
+verus-dev-verus-frontend-dev-5ff7657547-444zk Running 
+verus-dev-web-gateway-dev-54c6b7f99d-z6qtk Running 
+verus-dev-web-gateway-dev-567b596cb8-ncjkm Pending CreateContainerConfigError
+verus-knowledge-graph-5455c5d99b-n228f Running 
+verus-knowledge-graph-6fbd9f9b45-2zxfp Pending CreateContainerConfigError
+worker-svc-645d4bb7bd-vxf5x Running 

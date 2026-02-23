@@ -4,7 +4,7 @@ metadata:
   name: neo4j-dev
   namespace: flux-system
 spec:
-  suspend: true
+  suspend: false
   targetNamespace: verus-dev
   interval: 5m
   install:
@@ -24,6 +24,13 @@ spec:
     app:
       image:
         tag: latest # {"$imagepolicy": "flux-system:neo4j-dev:tag"}
+      config:
+        NEO4J_URI: "bolt://verus-dev-neo4j-dev:7687"
+        NEO4J_USER: "neo4j"
+      secrets:
+        NEO4J_PASSWORD:
+          key: "dev/verus-neo4j"
+          property: "NEO4J_PASSWORD"
       ingress:
         enabled: true
         host: verus-dev.districtcyber.io

@@ -4,7 +4,7 @@ metadata:
   name: auth-dev
   namespace: flux-system
 spec:
-  suspend: true
+  suspend: false
   targetNamespace: verus-dev
   interval: 5m
   install:
@@ -23,6 +23,13 @@ spec:
     environment: dev
     image:
       tag: 0.2.0-alpha.83 # {"$imagepolicy": "flux-system:auth-dev:tag"}
+    secrets:
+      POSTGRES_HOST: {key: "dev/verus-auth", property: "DB_HOST"}
+      POSTGRES_PORT: {key: "dev/verus-auth", property: "DB_PORT"}
+      POSTGRES_DATABASE: {key: "dev/verus-auth", property: "DB_NAME"}
+      POSTGRES_USER: {key: "dev/verus-auth", property: "DB_USERNAME"}
+      POSTGRES_PASSWORD: {key: "dev/verus-auth", property: "DB_PASSWORD"}
+      REDIS_ADDRESS: {key: "dev/verus-auth", property: "REDIS_ADDRESS"}
     ingress:
       enabled: true
       className: "alb"

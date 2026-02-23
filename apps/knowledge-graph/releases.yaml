@@ -4,7 +4,7 @@ metadata:
   name: knowledge-graph-dev
   namespace: flux-system
 spec:
-  suspend: true
+  suspend: false
   targetNamespace: verus-dev
   interval: 5m
   chart:
@@ -22,6 +22,17 @@ spec:
     environment: dev
     image:
       tag: 0.1.1-alpha.34-4024b0e # {"$imagepolicy": "flux-system:knowledge-graph-dev:tag"}
+    secrets:
+      NEO4J_GRPC_HOST: {key: "dev/verus-knowledge-graph", property: "NEO4J_GRPC_HOST"}
+      NEO4J_GRPC_PORT: {key: "dev/verus-knowledge-graph", property: "NEO4J_GRPC_PORT"}
+      PHX_HOST: {key: "dev/verus-knowledge-graph", property: "PHX_HOST"}
+      PHX_SERVER: {key: "dev/verus-knowledge-graph", property: "PHX_SERVER"}
+      PORT: {key: "dev/verus-knowledge-graph", property: "PORT"}
+      SECRET_KEY_BASE: {key: "dev/verus-knowledge-graph", property: "SECRET_KEY_BASE"}
+      DB_PASSWORD: {key: "dev/verus-auth", property: "DB_PASSWORD"}
+      DB_USERNAME: {key: "dev/verus-auth", property: "DB_USERNAME"}
+      DB_HOST: {key: "dev/verus-auth", property: "DB_HOST"}
+      DB_NAME: {key: "dev/verus-auth", property: "DB_NAME"}
     ingress:
       enabled: true
       className: "alb"

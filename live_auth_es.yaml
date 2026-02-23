@@ -1,0 +1,98 @@
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  annotations:
+    meta.helm.sh/release-name: verus-dev-auth-dev
+    meta.helm.sh/release-namespace: verus-dev
+  creationTimestamp: "2026-02-08T20:14:06Z"
+  generation: 4
+  labels:
+    app.kubernetes.io/instance: verus-dev-auth-dev
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: auth
+    app.kubernetes.io/version: 1.0.0
+    environment: dev
+    helm.sh/chart: auth-0.2.1
+    helm.toolkit.fluxcd.io/name: auth-dev
+    helm.toolkit.fluxcd.io/namespace: flux-system
+  name: verus-dev-auth-dev
+  namespace: verus-dev
+  resourceVersion: "55693124"
+  uid: 3df43c62-e744-48df-8082-83dd7d61e3cd
+spec:
+  data:
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-auth
+      metadataPolicy: None
+      property: GRPC_ADDRESS
+    secretKey: GRPC_ADDRESS
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-auth
+      metadataPolicy: None
+      property: JWT_SECRET
+    secretKey: JWT_SECRET
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-dev-db
+      metadataPolicy: None
+      property: DB_NAME
+    secretKey: POSTGRES_DATABASE
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-dev-db
+      metadataPolicy: None
+      property: DB_HOST
+    secretKey: POSTGRES_HOST
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-dev-db
+      metadataPolicy: None
+      property: DB_PASSWORD
+    secretKey: POSTGRES_PASSWORD
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-dev-db
+      metadataPolicy: None
+      property: DB_PORT
+    secretKey: POSTGRES_PORT
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-dev-db
+      metadataPolicy: None
+      property: DB_USERNAME
+    secretKey: POSTGRES_USER
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-dev-db
+      metadataPolicy: None
+      property: REDIS_ADDRESS
+    secretKey: REDIS_ADDRESS
+  refreshInterval: 1h
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: aws-secretsmanager
+  target:
+    creationPolicy: Owner
+    deletionPolicy: Retain
+    name: verus-dev-auth-dev
+status:
+  binding:
+    name: verus-dev-auth-dev-secret
+  conditions:
+  - lastTransitionTime: "2026-02-22T09:15:21Z"
+    message: could not get secret data from provider
+    reason: SecretSyncedError
+    status: "False"
+    type: Ready
+  refreshTime: "2026-02-22T08:36:01Z"
+  syncedResourceVersion: 3-ed51cad06a98421b06e8baca1e3b5dde

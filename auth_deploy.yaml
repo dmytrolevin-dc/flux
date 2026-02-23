@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "30"
+    meta.helm.sh/release-name: verus-dev-auth-dev
+    meta.helm.sh/release-namespace: verus-dev
+  creationTimestamp: "2026-02-08T20:14:06Z"
+  generation: 30
+  labels:
+    app.kubernetes.io/instance: verus-dev-auth-dev
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: auth
+    app.kubernetes.io/version: 1.0.0
+    environment: dev
+    helm.sh/chart: auth-0.2.1
+    helm.toolkit.fluxcd.io/name: auth-dev
+    helm.toolkit.fluxcd.io/namespace: flux-system
+  name: verus-dev-auth-dev
+  namespace: verus-dev
+  resourceVersion: "55726211"
+  uid: 294f4948-9855-4137-843f-da4a97421c33
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: verus-dev-auth-dev
+      app.kubernetes.io/name: auth
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: verus-dev-auth-dev
+        app.kubernetes.io/name: auth
+    spec:
+      containers:
+      - envFrom:
+        - secretRef:
+            name: verus-dev-auth-dev
+        image: 010438496771.dkr.ecr.us-east-2.amazonaws.com/verus-auth-svc:0.2.0-alpha.83
+        imagePullPolicy: IfNotPresent
+        name: auth
+        ports:
+        - containerPort: 9002
+          name: grpc
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 250m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: default
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2026-02-08T20:14:08Z"
+    lastUpdateTime: "2026-02-08T20:14:08Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2026-02-22T10:40:38Z"
+    lastUpdateTime: "2026-02-22T10:40:38Z"
+    message: ReplicaSet "verus-dev-auth-dev-59c4655dd" has timed out progressing.
+    reason: ProgressDeadlineExceeded
+    status: "False"
+    type: Progressing
+  observedGeneration: 30
+  readyReplicas: 1
+  replicas: 2
+  unavailableReplicas: 1
+  updatedReplicas: 1

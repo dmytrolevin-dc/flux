@@ -1,0 +1,87 @@
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"external-secrets.io/v1beta1","kind":"ExternalSecret","metadata":{"annotations":{},"labels":{"app":"verus-knowledge-graph","app.kubernetes.io/instance":"verus-dev-knowledge-graph-dev","app.kubernetes.io/name":"knowledge-graph","app.kubernetes.io/version":"0.1.1","environment":"dev"},"name":"verus-knowledge-graph","namespace":"verus-dev"},"spec":{"data":[{"remoteRef":{"key":"dev/verus-knowledge-graph","property":"NEO4J_GRPC_HOST"},"secretKey":"NEO4J_GRPC_HOST"},{"remoteRef":{"key":"dev/verus-knowledge-graph","property":"NEO4J_GRPC_PORT"},"secretKey":"NEO4J_GRPC_PORT"},{"remoteRef":{"key":"dev/verus-knowledge-graph","property":"PHX_HOST"},"secretKey":"PHX_HOST"},{"remoteRef":{"key":"dev/verus-knowledge-graph","property":"PHX_SERVER"},"secretKey":"PHX_SERVER"},{"remoteRef":{"key":"dev/verus-knowledge-graph","property":"PORT"},"secretKey":"PORT"},{"remoteRef":{"key":"dev/verus-knowledge-graph","property":"SECRET_KEY_BASE"},"secretKey":"SECRET_KEY_BASE"}],"refreshInterval":"1m","secretStoreRef":{"kind":"ClusterSecretStore","name":"aws-secretsmanager"},"target":{"creationPolicy":"Owner","deletionPolicy":"Retain","name":"verus-knowledge-graph"}}}
+    meta.helm.sh/release-name: verus-dev-knowledge-graph-dev
+    meta.helm.sh/release-namespace: verus-dev
+  creationTimestamp: "2026-02-22T09:15:41Z"
+  generation: 2
+  labels:
+    app: verus-knowledge-graph
+    app.kubernetes.io/instance: verus-dev-knowledge-graph-dev
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: knowledge-graph
+    app.kubernetes.io/version: 0.1.1
+    environment: dev
+    helm.sh/chart: knowledge-graph-0.1.3_4
+    helm.toolkit.fluxcd.io/name: knowledge-graph-dev
+    helm.toolkit.fluxcd.io/namespace: flux-system
+  name: verus-knowledge-graph
+  namespace: verus-dev
+  resourceVersion: "56251324"
+  uid: a34d7c8f-47d8-4c6e-8eff-87383aee766e
+spec:
+  data:
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-knowledge-graph
+      metadataPolicy: None
+      property: NEO4J_GRPC_HOST
+    secretKey: NEO4J_GRPC_HOST
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-knowledge-graph
+      metadataPolicy: None
+      property: NEO4J_GRPC_PORT
+    secretKey: NEO4J_GRPC_PORT
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-knowledge-graph
+      metadataPolicy: None
+      property: PHX_HOST
+    secretKey: PHX_HOST
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-knowledge-graph
+      metadataPolicy: None
+      property: PHX_SERVER
+    secretKey: PHX_SERVER
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-knowledge-graph
+      metadataPolicy: None
+      property: PORT
+    secretKey: PORT
+  - remoteRef:
+      conversionStrategy: Default
+      decodingStrategy: None
+      key: dev/verus-knowledge-graph
+      metadataPolicy: None
+      property: SECRET_KEY_BASE
+    secretKey: SECRET_KEY_BASE
+  refreshInterval: 1m
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: aws-secretsmanager
+  target:
+    creationPolicy: Owner
+    deletionPolicy: Retain
+    name: verus-knowledge-graph
+status:
+  binding:
+    name: verus-knowledge-graph
+  conditions:
+  - lastTransitionTime: "2026-02-23T09:37:27Z"
+    message: Secret was synced
+    reason: SecretSynced
+    status: "True"
+    type: Ready
+  refreshTime: "2026-02-23T10:48:34Z"
+  syncedResourceVersion: 2-8faa01b5537a742a51dba47dde814ab7

@@ -1,0 +1,11 @@
+NAME                           AGE
+temporal-server                2026-02-10T17:34:58Z
+temporal-ui                    2026-02-16T21:31:41Z
+verus-dev-auth-dev             2026-02-08T20:14:06Z
+verus-dev-catalog-svc          2026-02-10T12:01:25Z
+verus-dev-neo4j-dev-app        2026-02-09T06:22:23Z
+verus-dev-neo4j-dev-db         2026-02-09T06:22:23Z
+verus-dev-verus-frontend-dev   2026-02-09T11:17:28Z
+verus-dev-web-gateway-dev      2026-02-09T11:05:32Z
+verus-knowledge-graph          2026-02-08T08:20:08Z
+worker-svc                     2026-02-18T21:32:07Z

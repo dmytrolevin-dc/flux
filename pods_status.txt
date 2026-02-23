@@ -1,0 +1,15 @@
+NAME                                            READY   STATUS                       RESTARTS   AGE
+temporal-server-5b6d5575f5-x9jrq                1/1     Running                      0          11d
+temporal-ui-8f9bd7768-r2xzt                     1/1     Running                      0          5d12h
+verus-dev-auth-dev-7bd8695757-dflsg             0/1     CreateContainerConfigError   0          12m
+verus-dev-auth-dev-84cbb7cbf7-4vkjg             1/1     Running                      0          87m
+verus-dev-catalog-svc-5776b775b5-g82pt          0/1     CreateContainerConfigError   0          71m
+verus-dev-catalog-svc-64f6dd6c5c-ffsdr          1/1     Running                      0          87m
+verus-dev-neo4j-dev-app-54b94fd89b-mt9j5        1/1     Running                      0          2d16h
+verus-dev-neo4j-dev-app-69b899b98c-pkvvk        0/1     CreateContainerConfigError   0          73m
+verus-dev-neo4j-dev-db-74d459c45d-cnttq         1/1     Running                      0          73m
+verus-dev-verus-frontend-dev-5795d68d77-2m6r7   1/1     Running                      0          70m
+verus-dev-web-gateway-dev-54c6b7f99d-z6qtk      1/1     Running                      0          73m
+verus-knowledge-graph-5455c5d99b-n228f          1/1     Running                      0          85m
+verus-knowledge-graph-57d75c56fd-slg5d          0/1     CreateContainerConfigError   0          12m
+worker-svc-645d4bb7bd-vxf5x                     1/1     Running                      0          2d19h
