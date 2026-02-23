@@ -24,7 +24,7 @@ spec:
     service:
       targetPort: 9090
     image:
-      tag: 0.2.0-alpha.86 # {"$imagepolicy": "flux-system:catalog-dev:tag"}
+      tag: 0.2.0-alpha.91 # {"$imagepolicy": "flux-system:catalog-dev:tag"}
     secrets:
       ADMIN_TOKEN: {key: "dev/catalog-svc", property: "ADMIN_TOKEN"}
       JWT_SECRET: {key: "dev/verus-auth", property: "JWT_SECRET"}
