@@ -21,7 +21,7 @@ spec:
   values:
     environment: dev
     image:
-      tag: 0.1.1-alpha.33-4c4174b # {"$imagepolicy": "flux-system:knowledge-graph-dev:tag"}
+      tag: 0.1.1-alpha.34-4024b0e # {"$imagepolicy": "flux-system:knowledge-graph-dev:tag"}
     ingress:
       enabled: true
       className: "alb"
