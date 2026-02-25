@@ -22,7 +22,7 @@ spec:
   values:
     environment: dev
     image:
-      tag: 0.2.0-alpha.88 # {"$imagepolicy": "flux-system:auth-dev:tag"}
+      tag: 0.2.0-alpha.101 # {"$imagepolicy": "flux-system:auth-dev:tag"}
     secrets:
       POSTGRES_HOST: {key: "dev/verus-auth", property: "DB_HOST"}
       POSTGRES_PORT: {key: "dev/verus-auth", property: "DB_PORT"}
