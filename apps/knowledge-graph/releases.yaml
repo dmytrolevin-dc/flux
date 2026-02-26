@@ -21,7 +21,7 @@ spec:
   values:
     environment: dev
     image:
-      tag: 0.1.1-alpha.37-13ae9de # {"$imagepolicy": "flux-system:knowledge-graph-dev:tag"}
+      tag: 0.1.1-alpha.38-d4d9041 # {"$imagepolicy": "flux-system:knowledge-graph-dev:tag"}
     secrets:
       NEO4J_GRPC_HOST: {key: "dev/verus-knowledge-graph", property: "NEO4J_GRPC_HOST"}
       NEO4J_GRPC_PORT: {key: "dev/verus-knowledge-graph", property: "NEO4J_GRPC_PORT"}
